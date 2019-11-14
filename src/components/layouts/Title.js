@@ -3,8 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Background from "../images/bg.jpg";
 import Typography from "@material-ui/core/Typography";
 import { BackgroundImg } from "./style";
-import { Bounce } from "./style";
-import Pulse from "react-reveal/Pulse";
+import { Bounce, Pulse } from "./style";
 
 const useStyles = makeStyles(theme => ({
   root: {

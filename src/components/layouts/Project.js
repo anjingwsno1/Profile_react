@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import { TitleFont } from "./style";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,9 +33,7 @@ export default function Project() {
   return (
     <div className={classes.root} id="project">
       <Container>
-        <Typography align="center" variant="h3" gutterBottom>
-          PROJECT
-        </Typography>
+        <TitleFont>PROJECT</TitleFont>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Card className={classes.card}>

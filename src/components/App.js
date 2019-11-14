@@ -5,7 +5,6 @@ import {
   Profile,
   Education,
   Project,
-  Work,
   Skill,
   Contact,
   Footer
@@ -19,19 +18,10 @@ export default class extends Component {
         <Profile />
         <Education />
         <Project />
-        <Work />
         <Skill />
         <Contact />
         <Footer />
       </Fragment>
     );
-  }
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-  handleScroll(event) {
-    if (window.scrollY > 0) {
-      Header.style.display = "none";
-    }
   }
 }

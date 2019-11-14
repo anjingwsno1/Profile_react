@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -31,27 +31,43 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+
+  useEffect(() => {
+    console.log(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+  });
+  const [enableHeader, setEnableHeader] = useState(false);
+
+  const handleScroll = function() {
+    if (window.scrollY > 100) {
+      setEnableHeader(true);
+    } else {
+      setEnableHeader(false);
+    }
+  };
   return (
-    <ThemeProvider theme={outerTheme}>
-      <AppBar color="inherit" position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Shen Wang
-          </Typography>
-          <Button href="#profile">about</Button>
-          <Button href="#education">education</Button>
-          <Button href="#project">project</Button>
-          <Button href="#skill">skill</Button>
-        </Toolbar>
-      </AppBar>
-    </ThemeProvider>
+    <div style={{ display: enableHeader ? "block" : "none" }}>
+      <ThemeProvider theme={outerTheme}>
+        <AppBar color="inherit" position="fixed">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Shen Wang
+            </Typography>
+            <Button href="#profile">about</Button>
+            <Button href="#education">education</Button>
+            <Button href="#project">project</Button>
+            <Button href="#skill">skill</Button>
+          </Toolbar>
+        </AppBar>
+      </ThemeProvider>
+    </div>
   );
 }

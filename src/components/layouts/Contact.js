@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import Container from "@material-ui/core/Container";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Icon from "@material-ui/core/Icon";
@@ -9,21 +10,10 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(8, 40, 6)
+    padding: theme.spacing(8, 0, 6)
   },
   card: {
     width: 200
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
-  },
-  title: {
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
   }
 }));
 
@@ -37,7 +27,7 @@ export default function SimpleCard() {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <Container maxWidth="md" align="center" className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Card className={classes.card}>
@@ -69,6 +59,6 @@ export default function SimpleCard() {
           </Card>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }

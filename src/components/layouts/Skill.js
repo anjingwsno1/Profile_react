@@ -1,9 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
+import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
+import { TitleFont } from "./style";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,8 +14,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#f6f6f6",
     padding: theme.spacing(8, 0, 6)
   },
-  appBar: {
-    padding: theme.spacing(8, 30, 6)
+  tab: {
+    backgroundColor: theme.palette.background.paper,
+    width: "60%"
   }
 }));
 
@@ -27,11 +30,9 @@ export default function ScrollableTabsButtonAuto() {
 
   return (
     <div className={classes.root} id="skill">
-      <Typography align="center" variant="h3" gutterBottom>
-        SKILL
-      </Typography>
-      <div className={classes.appBar}>
-        <AppBar position="static" color="default">
+      <TitleFont>SKILL</TitleFont>
+      <Container align="center">
+        <Paper className={classes.tab}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -50,8 +51,8 @@ export default function ScrollableTabsButtonAuto() {
             <Tab label="React.js" />
             <Tab label="MongoDB" />
           </Tabs>
-        </AppBar>
-      </div>
+        </Paper>
+      </Container>
     </div>
   );
 }

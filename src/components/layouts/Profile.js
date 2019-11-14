@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import { Percentage } from "./style";
+import { Percentage, TitleFont } from "./style";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
@@ -29,9 +29,7 @@ export default function Profile() {
 
   return (
     <div className={classes.root} id="profile">
-      <Typography align="center" variant="h3" component="h2" gutterBottom>
-        ABOUT ME
-      </Typography>
+      <TitleFont>ABOUT ME</TitleFont>
       <Typography align="center" variant="subtitle1" gutterBottom>
         I'm a web developer, effective learner and problem-solver with advanced
         programming skills.
@@ -48,32 +46,32 @@ export default function Profile() {
           <Grid item xs={12} md={6}>
             <Percentage className="title">HTML</Percentage>
             <Percentage>80%</Percentage>
-            <LinearProgress variant="determinate" value="80" />
+            <LinearProgress variant="buffer" valueBuffer="80" value="80" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Percentage className="title">UX/UI</Percentage>
             <Percentage>70%</Percentage>
-            <LinearProgress variant="determinate" value="70" />
+            <LinearProgress variant="buffer" valueBuffer="70" value="70" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Percentage className="title">REACT</Percentage>
             <Percentage>80%</Percentage>
-            <LinearProgress variant="determinate" value="80" />
+            <LinearProgress variant="buffer" valueBuffer="80" value="80" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Percentage className="title">FRONT-END</Percentage>
             <Percentage>85%</Percentage>
-            <LinearProgress variant="determinate" value="85" />
+            <LinearProgress variant="buffer" valueBuffer="85" value="85" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Percentage className="title">BACK-END</Percentage>
             <Percentage>70%</Percentage>
-            <LinearProgress variant="determinate" value="70" />
+            <LinearProgress variant="buffer" valueBuffer="70" value="70" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Percentage className="title">DEPLOY</Percentage>
             <Percentage>70%</Percentage>
-            <LinearProgress variant="determinate" value="70" />
+            <LinearProgress variant="buffer" valueBuffer="70" value="70" />
           </Grid>
         </Grid>
       </ThemeProvider>
