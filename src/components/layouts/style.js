@@ -26,3 +26,8 @@ export const BackgroundImg = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `;
+
+export const LogoImg = styled.img`
+  /* Full height */
+  width: 100px;
+`;

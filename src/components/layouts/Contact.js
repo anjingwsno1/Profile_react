@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(8, 0, 6)
+    padding: theme.spacing(8, 40, 6)
   },
   card: {
     width: 200

@@ -5,6 +5,7 @@ import {
   Profile,
   Education,
   Project,
+  Work,
   Skill,
   Contact,
   Footer
@@ -18,6 +19,7 @@ export default class extends Component {
         <Profile />
         <Education />
         <Project />
+        <Work />
         <Skill />
         <Contact />
         <Footer />
