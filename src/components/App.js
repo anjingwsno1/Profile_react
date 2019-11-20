@@ -6,6 +6,7 @@ import {
   Education,
   Project,
   Skill,
+  Work,
   Contact,
   Footer
 } from "./layouts";
@@ -19,6 +20,7 @@ export default class extends Component {
         <Education />
         <Project />
         <Skill />
+        <Work />
         <Contact />
         <Footer />
       </Fragment>

@@ -6,8 +6,8 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepContent from "@material-ui/core/StepContent";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import { TitleFont } from "./style";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +29,7 @@ function getSteps() {
   return [
     "08/2018 - 11/2018 Capstone Project",
     "10/2019 - 01/2020 Monkey King Student Service Center",
-    ""
+    "To be continue"
   ];
 }
 function getRoleContent(step) {
@@ -74,9 +74,7 @@ export default function Work() {
   return (
     <div className={classes.root} id="work">
       <Container>
-        <Typography align="center" variant="h3" gutterBottom>
-          WORK EXPERIENCE
-        </Typography>
+        <TitleFont>WORK EXPERIENCE</TitleFont>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
             <Step key={label}>
@@ -96,6 +94,7 @@ export default function Work() {
                       Back
                     </Button>
                     <Button
+                      disabled={activeStep === steps.length - 1}
                       variant="contained"
                       color="primary"
                       onClick={handleNext}
