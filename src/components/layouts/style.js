@@ -26,16 +26,37 @@ export const Percentage = styled.div`
   }
 `;
 
+// export const BackgroundImg = styled.div`
+//   background-image: url(${img});
+
+//   /* Full height */
+//   height: 100%;
+//   min-height: 100%;
+//   /* Center and scale the image nicely */
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// `;
 export const BackgroundImg = styled.div`
   background-image: url(${img});
-
-  /* Full height */
+  position: absolute;
+  display: block;
+  width: 100%;
+  width: calc(100% + 1px);
   height: 100%;
-  min-height: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
+  height: calc(100% + 1px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: visible;
   background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  z-index: 1;
 `;
 
 export const LogoImg = styled.img`
