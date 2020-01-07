@@ -5,7 +5,6 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepContent from "@material-ui/core/StepContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { TitleFont } from "./style";
 
@@ -27,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 function getSteps() {
   return [
-    "08/2018 - 11/2018 Capstone Project",
+    "08/2018 - 11/2018 Capstone Project In University of Sydney",
     "10/2019 - 01/2020 Monkey King Student Service Center",
     "To be continue"
   ];
@@ -48,7 +47,7 @@ function getRoleContent(step) {
 function getWorkContent(step) {
   switch (step) {
     case 0:
-      return `Work Content: Work as a project leader to plan, build, test and debug a bitcoin-related project. \n                       Help to build the constructure and implement important functions include sign up, login, history price visualization, real-time change display and price prediction`;
+      return `Work Content: Work as a project leader to plan, build, test and debug a bitcoin-related project. Help to build the constructure and implement important functions include sign up, login, history price visualization, real-time change display and price prediction`;
     case 1:
       return "Work Content: Fix bugs of the company's previous website \n                       Add new pages of events \n                       Update new content of the website \n                       Add database to implement user functions such as sign up, login, subscribe. \n                       Add admin management";
     case 2:
@@ -63,12 +62,8 @@ export default function Work() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+  const handleIndexClick = index => {
+    setActiveStep(index);
   };
 
   return (
@@ -78,32 +73,18 @@ export default function Work() {
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
             <Step key={label}>
-              <StepLabel>{label}</StepLabel>
+              <StepLabel
+                style={{ cursor: "pointer" }}
+                onClick={e => handleIndexClick(index, e)}
+              >
+                {label}
+              </StepLabel>
               <StepContent>
                 <Typography>{getRoleContent(index)}</Typography>
                 <Typography style={{ whiteSpace: "pre-wrap" }}>
                   {getWorkContent(index)}
                 </Typography>
-                <div className={classes.actionsContainer}>
-                  <div>
-                    <Button
-                      disabled={activeStep === 0}
-                      onClick={handleBack}
-                      className={classes.button}
-                    >
-                      Back
-                    </Button>
-                    <Button
-                      disabled={activeStep === steps.length - 1}
-                      variant="contained"
-                      color="primary"
-                      onClick={handleNext}
-                      className={classes.button}
-                    >
-                      {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                    </Button>
-                  </div>
-                </div>
+                <div className={classes.actionsContainer} />
               </StepContent>
             </Step>
           ))}

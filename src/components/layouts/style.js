@@ -62,4 +62,9 @@ export const BackgroundImg = styled.div`
 export const LogoImg = styled.img`
   /* Full height */
   width: 100px;
+  transition: all 1s;
+
+  &:hover {
+    width: 140px;
+  }
 `;
